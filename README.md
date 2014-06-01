@@ -23,7 +23,8 @@ Things you may want to cover:
 
 * ...
 
-## Bloccit: a Reddit clone to teach the fundamentals of web development and Rails 4.
+## Centroccit: a Reddit clone to teach the fundamentals of web development and Rails 4.
+## http://centroccit.herokuapp.com/
 
 Made with my mentor at [Bloc](http://bloc.io).
 
