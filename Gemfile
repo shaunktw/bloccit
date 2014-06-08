@@ -51,3 +51,6 @@ gem 'devise'
 
 #Figaro gem to hide sensitve data
 gem 'figaro'
+
+#Pundit for rol authorization
+gem 'pundit'
