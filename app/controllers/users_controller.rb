@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     else
       render "devise/registrations/edit"
     end
+  end
 
     private
 
