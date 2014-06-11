@@ -54,3 +54,6 @@ gem 'figaro'
 
 #Pundit for rol authorization
 gem 'pundit'
+
+#Markdown 
+gem 'redcarpet'
