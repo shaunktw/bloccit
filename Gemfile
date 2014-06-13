@@ -62,5 +62,8 @@ gem 'redcarpet'
 gem 'carrierwave'
 gem 'mini_magick'
 
-# Amazon S3 fo gem
+# Amazon S3 for gem
 gem 'fog'
+
+# Pagination gem
+gem 'will_paginate', '~> 3.0.5'
