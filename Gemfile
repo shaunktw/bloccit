@@ -57,3 +57,10 @@ gem 'pundit'
 
 #Markdown 
 gem 'redcarpet'
+
+#CarrierWave and MiniMagick
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Amazon S3 fo gem
+gem 'fog'
