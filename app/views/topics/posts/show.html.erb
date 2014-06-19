@@ -10,7 +10,9 @@
   <p><%= markdown @post.body %></p>
   <p><%= image_tag(@post.image_url) if @post.image? %></p>
   <p><%= render partial: 'comments/comment', collection: @comments, locals: {topic: @topic, post: @post} %>
+  <%if policy(@comment).create? %>
   <p><%= render partial: 'comments/form', locals: {topic: @topic, post: @post, comment: @comment}  %></p>
+  <% end %>
   </div>
   
   <div class="col-md-4">
