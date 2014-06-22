@@ -8,6 +8,8 @@
       <%= @post.user.name %>
     </small>
   <p><%= markdown @post.body %></p>
+  <hr/>
+  <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
   <p><%= image_tag(@post.image_url) if @post.image? %></p>
   <p><%= render partial: 'comments/comment', collection: @comments, locals: {topic: @topic, post: @post} %>
   <%if policy(@comment).create? %>
