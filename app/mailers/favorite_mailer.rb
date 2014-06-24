@@ -6,9 +6,9 @@ class FavoriteMailer < ActionMailer::Base
     @post = post
     @comment = comment
 
-    headers["Message-ID"] = "<comments/#{@comment.id}@centroccit"
-    headers["In-Reply-To"] = "<post/#{@post.id}@centroccit"
-    headers["References"] = "<post/#{@post.id}@centroccit"
+    headers["Message-ID"] = "<comments/#{@comment.id}@sentro"
+    headers["In-Reply-To"] = "<post/#{@post.id}@sentro"
+    headers["References"] = "<post/#{@post.id}@sentro"
 
     mail(to: user.email, subject: "New comment on #{post.title}")
   end
