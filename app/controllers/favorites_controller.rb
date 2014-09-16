@@ -1,4 +1,6 @@
+
 class FavoritesController < ApplicationController
+   
   
   def create
     @topic = Topic.find(params[:topic_id])
