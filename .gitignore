@@ -22,5 +22,5 @@
 public/uploads
 
 #Ignore jbuilder files
-/views/topics/index.json.jbuilder
-/views/posts/index.json.jbuilder
+/app/views/topics/index.json.jbuilder
+/app/views/posts/index.json.jbuilder
