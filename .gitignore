@@ -20,3 +20,7 @@
 
 # Carrierwave image
 public/uploads
+
+#Ignore jbuilder files
+/views/topics/index.json.jbuilder
+/views/posts/index.json.jbuilder
