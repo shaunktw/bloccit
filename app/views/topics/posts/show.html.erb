@@ -8,6 +8,7 @@
       <%= @post.user.name %>
     </small>
   <p><%= markdown @post.body %></p>
+  <p> Tags: <%= raw @post.tag_list.map {|t| link_to t, tag_path(t) }.join(', ') %> </p>
   <hr/>
   <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
   <p><%= image_tag(@post.image_url) if @post.image? %></p>
