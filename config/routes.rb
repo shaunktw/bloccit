@@ -2,7 +2,7 @@ Bloccit::Application.routes.draw do
 
   get "posts/index"
   get 'tags/:tag', to: 'posts#index', as: :tag
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
 
     resources :users, only: [:update, :show, :index]

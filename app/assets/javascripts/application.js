@@ -12,6 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+if (window.location.href.indexOf('#_=_') > 0) {
+
+window.location = window.location.href.replace(/#.*/, '');
+
+}
