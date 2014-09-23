@@ -19,6 +19,7 @@ Bloccit::Application.routes.draw do
 
   get 'about' => 'welcome#about'
   get 'index' => 'welcome#index'
+  get 'privacypolicy' => 'welcome#privacypolicy'
   root to: 'posts#index'
   
 end

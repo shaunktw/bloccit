@@ -29,6 +29,26 @@
 .m { font-size: 1.2em; }
 .l { font-size: 1.8em; }
 
+#ppBody
+{
+    font-size:11pt;
+    width:960px;
+    margin:0 auto;
+    text-align:justify;
+}
+
+#ppHeader
+{
+    font-family:verdana;
+    font-size:21pt;
+    width:960px;
+    margin:0 auto;
+}
+
+.ppConsistencies
+{
+    display:none;
+}
 
 @import url("//fonts.googleapis.com/css?family=Ubuntu");
 /*!
