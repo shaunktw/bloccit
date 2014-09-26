@@ -19,6 +19,7 @@ class VotesController < ApplicationController
     if current_user
       @vote = @post.votes.where(user_id: current_user.id).first
     else
+      flash[:warning] = "Please sign up to vote!"
       redirect_to new_user_registration_path
     end
   end
