@@ -16,8 +16,11 @@ class VotesController < ApplicationController
   def setup
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
-
-    @vote = @post.votes.where(user_id: current_user.id).first
+    if current_user
+      @vote = @post.votes.where(user_id: current_user.id).first
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
 
