@@ -1,5 +1,8 @@
 
-<h1><%= @topic.name %></h1>
+<!-- <h1><%#= @topic.name %></h1> -->
+<div class="page-header" style="margin-top: 25px;">
+  <h3 class="title"><%= @topic.name %></h3>
+</div>
 
 <% if policy(@topic).update? %>
   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
@@ -7,7 +10,8 @@
 
 <div class="row">
   <div class="col-md-8">
-    <p class="lead"><%= @topic.description %></p>
+    <p class="about"><%= @topic.description %></p>
+    <br>
     <%= render @posts %>
     <%= will_paginate @posts %>
   </div> 

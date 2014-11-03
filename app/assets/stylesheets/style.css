@@ -12,11 +12,12 @@ Premium: http://www.gridgum.com
 /* BASIC THEME CONFIGURATION */
 body {
     color: #797979;
-	background: #f2f2f2;
+	background: #FAFAFA;
     font-family: 'Ruda', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
     font-size:13px;
+    overflow-y: scroll;
 }
 
 ul li {
@@ -35,6 +36,68 @@ a, a:hover, a:focus {
 ::-moz-selection {
     background: #68dff0;
     color: #fff;
+}
+div#tag_cloud{
+    margin: 15px 0;
+}
+div.set-panel{
+    margin-top: 20px;
+}
+div.page-header{
+    margin-top: 0;
+}
+h3.title{
+    color: #797979;
+    margin: 0px 0;
+    padding: 0;
+    font-weight: bold;
+}
+ul.list-style{
+    padding-left: 15px;
+}
+p.about{
+    font-size: 17px;
+}
+.navbar-default{
+    border-radius: 0px!important;
+    -moz-border-radius: 0px!important;
+    -webkit-border-radius: 0px!important;
+    margin-top: 10px!important;
+}
+.label-lg{
+    font-size: 16px!important;
+    background-color: #428bca;
+}
+.label-lg:hover{
+    background-color: #3071a9;
+}
+.media-styling{
+    background: rgb(240,240,240); /* Old browsers */
+    margin: 1px!important;
+    padding: 10px 0;
+}
+.media-styling:nth-child(odd){
+    background: rgba(240,240,240,.5);
+}
+@media(max-width: 764px){
+    .navbar-text{
+        border-top: 1px solid rgba(31,31,31, .2);
+        padding-top: 10px;
+    }
+}
+.jumbotron{
+    background: #fafafa; /* Old browsers */
+    background: -moz-linear-gradient(top, #fafafa 0%, #f5f5f5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#f5f5f5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fafafa 0%,#f5f5f5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fafafa 0%,#f5f5f5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fafafa 0%,#f5f5f5 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fafafa 0%,#f5f5f5 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+    border-bottom: 2px solid rgb(235,235,235);
+    border-radius: 0px!important;
+    -webkit-border-radius: 0px!important;
+    -moz-border-radius: 0px!important;
 }
 
 #container {
@@ -147,7 +210,6 @@ a, a:hover, a:focus {
 .open .dropdown-toggle.btn-theme04 {
   color: #fff;
   background-color: #da4453;
-  border-color: #da4453;
 }
 
 .btn-clear-g {
@@ -207,6 +269,7 @@ hr {
 
 .label-theme {
 	background-color: #68dff0;
+    color: #CDE1CD;
 }
 
 .bg-theme {
@@ -775,14 +838,14 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .ds h3 {
-	color: #ffffff;
-	font-size: 16px;
-	padding: 0 10px;
+	/*color: #ffffff;*/
+	/*font-size: 16px;*/
+	/*padding: 0 10px;*/
 	line-height: 60px;
 	height: 60px;
 	margin: 0;
-	background: #ff865c;
-	text-align: center;
+	/*background: #ff865c;*/
+	/*text-align: center;*/
 }
 
 .ds i {
@@ -822,10 +885,6 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 	text-transform: uppercase;
 	font-style: italic;
 	color: #666666
-}
-
-.ds a {
-	color: #68dff0;
 }
 
 /* LINE ICONS CONFIGURATION */
@@ -1925,9 +1984,9 @@ label {
 
 /*LOGIN CONFIGURATION PAGE*/
 .form-login {
-	max-width: 330px;
-	margin: 100px auto 0;
-	background: #fff;
+	max-width: 530px;
+	margin: 25px auto 0;
+	background: #E6E6E6;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
@@ -1936,7 +1995,7 @@ label {
 	margin: 0;
 	padding: 25px 20px;
 	text-align: center;
-	background: #68dff0;
+	background: #dd4814;
 	border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	color: #fff;
@@ -2241,3 +2300,42 @@ label {
 }
 
 
+
+
+
+/*Editing Style*/
+
+/*Font styling*/
+a{
+    color: #dd4814;
+}
+.navbar-default .navbar-brand{
+    color: #dd4814;
+}
+.navbar-default .navbar-nav > li > a{
+    color: #dd4814;
+}
+.navbar-default .navbar-nav > li > a:hover ,
+.navbar-default .navbar-brand:hover{
+    color: #ae3910;
+}
+.font-12{
+    font-size: 12px;
+}
+
+/*Global*/
+.vote-arrows {
+  width: 40px;
+  text-align: center;
+}
+.label-orange, .btn-orange {
+  background-color: #dd4814;
+  color: #FFF;
+}
+.label-orange[href]:hover,
+.label-orange[href]:focus,
+.btn-orange:hover,
+.btn-orange:focus {
+  background-color: #ae3910;
+  color: #FFF;
+}
