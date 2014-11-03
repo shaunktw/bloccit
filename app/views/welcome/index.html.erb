@@ -1,29 +1,35 @@
 <br/>
   <div class="jumbotron">
-  <h1>Sentro</h1>
-  <p>the center of everything new in Singapore</p>
-  <p>
-      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or 
-      <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: 'btn btn-primary' %>
-      Not a user? <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
-  </p>
-</div>
-
-<div class="row">
-
-  <div class="col-md-4">
-    <h2>Sharing Is Caring</h2>
-    <p>Sentro is for sharing new and interesting establishments. Learn about the new retail stores, restaurants, cafes, coffee joints or even laundromats in town!</p>
+    <h1>Sentro</h1>
+    <p>the center of everything new in Singapore</p>
+    <p>
+        <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or 
+        <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: 'btn btn-primary' %>
+        Not a user? <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+    </p>
   </div>
+<div class="color-content">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="showback">
+        <h2>Sharing Is Caring</h2>
+        <p>Sentro is for sharing new and interesting establishments. Learn about the new retail stores, restaurants, cafes, coffee joints or even laundromats in town!</p>
+      </div>
+    </div>
 
-  <div class="col-md-4">
-    <h2>Eliminates Lag Time</h2>
-    <p>We encourage people to submit links, photos or videos of new establishments.</p>
+    <div class="col-md-4">
+      <div class="showback">
+        <h2>Eliminates Lag Time</h2>
+        <p>We encourage people to submit links, photos or videos of new establishments.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="showback">
+        <h2>Make Your Name Known</h2>
+        <p>Sentro curates submissions and are upvoted by the community. This is a great way to view trending establishments.</p>
+      </div>
+    </div>
+
   </div>
-
-  <div class="col-md-4">
-    <h2>Make Your Name Known</h2>
-    <p>Sentro curates submissions and are upvoted by the community. This is a great way to view trending establishments.</p>
-  </div>
-
 </div>

@@ -1,4 +1,4 @@
-<div class="media">
+<div class="media media-styling">
   <%= render partial: 'votes/voter', locals: {topic: post.topic, post: post} %>
   <%= link_to [post.topic, post], class: 'pull-left' do %>
     <%= image_tag(post.image.thumb.url) if post.image? %>
@@ -7,8 +7,8 @@
     <h4 class="media-heading">
       <%= link_to (markdown post.title), [post.topic, post] %>
     </h4>
-     <small> Tags: <%= raw post.tag_list.map {|t| link_to t, tag_path(t) }.join(', ') %> </small>
-    <small>
+     <small> Tags: <%= raw post.tag_list.map {|t| link_to t, tag_path(t), class: "label label-primary" }.join(' ') %> </small>
+    <small>&nbsp;
       <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
       submitted <%= time_ago_in_words(post.created_at) %> ago by
       <%= link_to post.user.name, post.user %><br/>
