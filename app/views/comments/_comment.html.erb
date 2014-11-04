@@ -8,7 +8,7 @@
     </small>
     <p><%= comment.body %></p>
     <%if policy(comment).destroy? %>
-      <small>| <%= link_to "Delete", comment_url_helper(comment), method: :delete, remote: true %></small>
+      <small>| <%= link_to comment_url_helper(comment), method: :delete, remote: true do %> <span class="glyphicon glyphicon-trash"></span> Delete <% end %></small>
     <% end %>
   </div>
   <% end %>

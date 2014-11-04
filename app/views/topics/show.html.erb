@@ -1,25 +1,9 @@
 
 <!-- <h1><%#= @topic.name %></h1> -->
-<div class="page-header" style="margin-top: 25px;">
-  <h3 class="title"><%= @topic.name %>
-  <% if policy(@topic).update? %>
-    <%= link_to edit_topic_path, class: 'btn btn-warning btn-xs' do %>
-      <span class="glyphicon glyphicon-pencil"></span> Edit Topic
-    <% end %>
-  <% end %>
-  </h3>
-</div>
 
 
 <div class="row">
-  <div class="col-md-8">
-    <p class="about"><%= @topic.description %></p>
-    <br>
-    <%= render @posts %>
-    <%= will_paginate @posts %>
-  </div> 
-
-  <div class="col-md-4">
+  <div class="col-xs-12 col-md-4 pull-right" style="margin-bottom: 20px;">
     <% if policy(Post.new).create? %>
       <%= link_to new_topic_post_path(@topic), class: 'btn btn-success' do %>
         <span class="glyphicon glyphicon-plus"></span> New Place
@@ -31,4 +15,20 @@
       <% end %>
     <% end %>
   </div>
+  <div class="col-md-8">
+    <div class="page-header" style="margin-top: 25px;">
+      <h3 class="title"><%= @topic.name %>
+      <% if policy(@topic).update? %>
+        <%= link_to edit_topic_path, class: 'btn btn-warning btn-xs' do %>
+          <span class="glyphicon glyphicon-pencil"></span> Edit Topic
+        <% end %>
+      <% end %>
+      </h3>
+    </div>
+    <p class="about"><%= @topic.description %></p>
+    <br>
+    <%= render @posts %>
+    <%= will_paginate @posts %>
+  </div> 
+
 </div>
