@@ -1,6 +1,7 @@
-<div class="media">
+<div class="media media-styling">
   <%= link_to user, class: 'pull-left' do %>
-  <%= image_tag(user.avatar.profile.url) if user.avatar? %>
+    <%= image_tag(user.avatar.profile.url) if user.avatar? %>
+    <%= "<div class='image-default'><span class='glyphicon glyphicon-user icon-large'></span></div>".html_safe unless user.avatar? %>
   <% end %>
   <div class="media-body">
     <h4 class="media-heading">

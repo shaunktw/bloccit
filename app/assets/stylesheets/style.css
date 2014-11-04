@@ -2342,3 +2342,10 @@ a{
 .favorite{
     margin-top: 20px;
 }
+.image-default{
+    width: 45px;
+    text-align: center;
+}
+.icon-large{
+    font-size: 32px;
+}
