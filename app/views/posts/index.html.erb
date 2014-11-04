@@ -11,7 +11,7 @@
      <% end %>
     </div>
     <%= render partial: 'posts/post', collection: @posts %>
-      <%= will_paginate @posts %>
+      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
   </div>
   <div class="col-md-4">
   </div>

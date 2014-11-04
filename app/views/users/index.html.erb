@@ -5,6 +5,6 @@
     </div>
     <p class="about">Most active users</p>
     <%= render partial: 'users/user', collection: @users %>
-    <%= will_paginate @users %>
+    <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
   </div>
 </div>

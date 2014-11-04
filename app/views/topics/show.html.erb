@@ -28,7 +28,7 @@
     <p class="about"><%= @topic.description %></p>
     <br>
     <%= render @posts %>
-    <%= will_paginate @posts %>
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
   </div> 
 
 </div>
