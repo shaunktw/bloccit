@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-md-8">
-    <h1> Popular Users </h1>
-    <p class="lead">Most active users</p>
+  <div class="col-md-12">
+    <div class="page-header" style="margin-top: 25px;">
+      <h3 class="title">Popular Users</h3>
+    </div>
+    <p class="about">Most active users</p>
     <%= render partial: 'users/user', collection: @users %>
-    <%= will_paginate @users %>
-  </div>
-  <div class="col-md-4">
+    <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
   </div>
 </div>

@@ -19,17 +19,7 @@
       </label>
       <button class="btn btn-orange btn-block" type="submit"><span class="glyphicon glyphicon-lock"></span> SIGN IN</button>
       <hr>
-      
-      <div class="login-social-link centered">
-      <p>or you can sign in via your social network</p>
-          <%- resource_class.omniauth_providers.each do |provider| %>
-            <%= link_to "#{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-facebook" %><br />
-          <% end -%>
-      </div>
-      <div class="registration">
-          Don't have an account yet?<br/>
-          <%= link_to "Create an account", new_registration_path(resource_name) %>
-      </div>
+      <%= render "devise/shared/links" %>
 
   </div>
 

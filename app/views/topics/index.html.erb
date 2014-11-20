@@ -3,6 +3,11 @@
     <div class="page-header" style="margin-top: 25px;">
       <h3 class="title">Categories</h3>
     </div>
+    <% if policy(Topic.new).create? %>
+      <%= link_to new_topic_path, class: 'btn btn-success' do %>
+        <span class="glyphicon glyphicon-plus"></span> New Topic
+      <% end %>
+    <% end %>
     <% @topics.each do |topic| %>
       <div class="media">
         <div class="media-body">
@@ -16,11 +21,6 @@
       </div>
       <hr>
     <% end %>
-    <%= will_paginate @index %>
-  </div>
-  <div class="col-md-4">
-    <% if policy(Topic.new).create? %>
-      <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
-    <% end %>
+    <%= will_paginate @index, renderer: BootstrapPagination::Rails %>
   </div>
 </div>

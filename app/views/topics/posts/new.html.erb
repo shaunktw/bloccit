@@ -1,16 +1,19 @@
-<h1> New Post </h1>
-
 <div class="row">
-
-  <div class="col-md-4">
-    <p>Guidelines for posts</p>
-
-    <ul>
-      <li>Make sure the it rhymes.</li>
-      <li>Keep it simple.</li>
-      <li>The incessant use of hastags will get you banned.</li>
-    </ul>
-  </div>
-    <%= render partial: 'form', locals: {topic: @topic, post: @post } %>
+  <div class="col-md-8 col-lg-offset-2">
+    <div class="panel panel-default set-panel">
+      <div class="panel-body">
+        <div class="page-header">
+          <h3 class="title">New Post</h3>
+        </div>
+        <p class="about"> Guidelines for categories: </p>
+        <ul class="list-style">
+          <li>&raquo; Make sure the topic is appropriate.</li>
+          <li>&raquo; Keep it simple.</li>
+          <li>&raquo; Smile when you type.</li>
+        </ul>
+        <hr style="border-color: #eee;">
+        <%= render partial: 'form', locals: {topic: @topic, post: @post } %>
+      </div>
+    </div>
   </div>
 </div>

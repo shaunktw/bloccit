@@ -65,14 +65,15 @@ gem 'pundit'
 gem 'redcarpet'
 
 #CarrierWave and MiniMagick
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.9.0'
 gem 'mini_magick'
 
 # Amazon S3 for gem
 gem 'fog'
 
 # Pagination gem
-gem 'will_paginate', '~> 3.0.5'
+# gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate-bootstrap'
 
 gem 'acts-as-taggable-on'
 

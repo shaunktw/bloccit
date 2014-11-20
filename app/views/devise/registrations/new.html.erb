@@ -1,31 +1,61 @@
-<h2>Sign up</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-login"}) do |f| %>
+  <h2 class="form-login-heading">sign up now</h2>
+  <div class="login-wrap">
+    <%= devise_error_messages! %>
+      <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
+      <br>
+      <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Enter email" %>
+      <br>
+      <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
+      <br>
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
+      <br>
+      <button class="btn btn-orange btn-block" type="submit"> SIGN UP</button>
+      <hr>
+      
+      <div class="login-social-link centered">
+      <p>or you can sign in via your social network</p>
+          <%- resource_class.omniauth_providers.each do |provider| %>
+            <%= link_to "#{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-facebook" %><br />
+          <% end -%>
+      </div>
+      <div class="registration">
+          Already have an account?<br/>
+          <%= link_to "Sign in now", new_session_path(resource_name) %>
+      </div>
+
+  </div>
+
+<% end %>
+
+<!-- <h2>Sign up</h2>
 
 <div class="row">
   <div class="col-md-8">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+    <%#= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-login"}) do |f| %>
+      <%#= devise_error_messages! %>
       <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
+        <%#= f.label :name %>
+        <%#= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
       </div>
       <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
+        <%#= f.label :email %>
+        <%#= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
       </div>
       <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
+        <%#= f.label :password %>
+        <%#= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
       </div>
       <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
+        <%#= f.label :password_confirmation %>
+        <%#= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
       </div>
       <div class="form-group">
-        <%= f.submit "Sign up", class: 'btn btn-success' %>
+        <%#= f.submit "Sign up", class: 'btn btn-success' %>
       </div>
       <div class="form-group">
-        <%= render "devise/shared/links" %>
+        <%#= render "devise/shared/links" %>
       </div>
-    <% end %>
+    <%# end %>
   </div>
-</div>
+</div> -->

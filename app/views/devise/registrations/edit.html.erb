@@ -1,4 +1,6 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="page-header" style="margin-top: 25px;">
+  <h3 class="title">Edit <%= resource_name.to_s.humanize %></h3>
+</div>
 
 <div class="row">
   <div class="col-md-8">
@@ -33,6 +35,8 @@
       </div>
     <% end %>
 
+  </div>
+  <div class="col-lg-4 well well-sm">
     <h3>Edit personal information</h3>
     <%= form_for(current_user) do |f| %>
       <div class="form-group">
