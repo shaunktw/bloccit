@@ -1,0 +1,44 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Sentro", index_path, class: "navbar-brand" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Categories", topics_path %></li>
+        <li><%= link_to "Trending", posts_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Privacy", privacypolicy_path %></li>
+      </ul>
+      <p class="navbar-text navbar-right">
+      <% if current_user  %>
+      <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
+        Hello <%= link_to (current_user.name || current_user.email), current_user %>!
+
+        <%= link_to edit_user_registration_path, class: 'btn btn-orange btn-sm' do %> 
+        <span class="glyphicon glyphicon-user"></span>
+        <% end %>
+        
+        <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-orange btn-sm' do %>
+        <span class="glyphicon glyphicon-log-out"></span>
+        <% end %>
+
+      <% else  %>
+        <%= link_to "Sign In", new_user_session_path  %> |
+        Sign in with <%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %> or
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
+      </p>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

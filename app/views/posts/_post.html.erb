@@ -1,18 +1,38 @@
-<div class="media media-styling">
-  <%= render partial: 'votes/voter', locals: {topic: post.topic, post: post} %>
-  <%= link_to [post.topic, post], class: 'pull-left' do %>
-    <%= image_tag(post.image.thumb.url) if post.image? %>
-  <% end %>
+<!-- <div class="media media-styling">
+  <%#= render partial: 'votes/voter', locals: {topic: post.topic, post: post} %>
+  <%#= link_to [post.topic, post], class: 'pull-left' do %>
+    <%#= image_tag(post.image.thumb.url) if post.image? %>
+  <%# end %>
   <div class="media-body">
     <h4 class="media-heading">
-      <%= link_to (markdown post.title), [post.topic, post] %>
+      <%#= link_to (markdown post.title), [post.topic, post] %>
     </h4>
-     <small> Tags: <%= raw post.tag_list.map {|t| link_to t, tag_path(t), class: "label label-primary" }.join(' ') %> </small>
+     <small> Tags: <%#= raw post.tag_list.map {|t| link_to t, tag_path(t), class: "label label-primary" }.join(' ') %> </small>
     <small>&nbsp;
-      <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
-      submitted <%= time_ago_in_words(post.created_at) %> ago by
-      <%= link_to post.user.name, post.user %><br/>
-      <%= post.comments.count %> Comments
+      <%#= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
+      submitted <%#= time_ago_in_words(post.created_at) %> ago by
+      <%#= link_to post.user.name, post.user %><br/>
+      <%#= post.comments.count %> Comments
     </small>
+  </div>
+</div> -->
+<div class="item">
+  <div class="thumbnail">
+    <%= link_to [post.topic, post] do %>
+      <%= image_tag(post.image.url) if post.image? %>
+    <% end %>
+    <div class="caption">
+      <h3><%= link_to (markdown post.title), [post.topic, post] %></h3>
+      <%= render partial: 'votes/voter', locals: {topic: post.topic, post: post} %>
+      <small> Tags: <%= raw post.tag_list.map {|t| link_to t, tag_path(t), class: "label label-primary" }.join(' ') %> </small>
+      <br><small>
+        <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
+        submitted <%= time_ago_in_words(post.created_at) %> ago by
+        <%= link_to post.user.name, post.user %><br/>
+      </small>
+      <br>
+      <p><%= truncate(post.body, length: 100) %></p>
+      <p align="right" class="comment-count"><%= post.comments.count %> Comments</p>
+    </div>
   </div>
 </div>

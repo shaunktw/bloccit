@@ -27,7 +27,9 @@
     </div>
     <p class="about"><%= @topic.description %></p>
     <br>
-    <%= render @posts %>
+    <div class="row gap-style">
+      <%= render @posts %>
+    </div>
     <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
   </div> 
 

@@ -1,23 +1,16 @@
 <div class="row">
-  <div class="col-md-8">
-    <div class="page-header" style="margin-top: 25px;">
-      <h3 class="title">Trending</h3>
-    </div>
-    <p class="about"> Newest places this week </p>
-    <div id="tag_cloud">
-    Tag Cloud:
-     <% tag_cloud Post.tag_counts_on(:tags, :limit => 10, :order => "count desc"), %w[s m l] do |tag| %>
-      <%= link_to tag.name, tag_path(tag.name), class: "label label-orange font-12" %>
-     <% end %>
-    </div>
+  <div class="page-header" style="margin-top: 25px;">
+    <h3 class="title">Trending</h3>
+  </div>
+  <p class="about"> Newest places this week </p>
+  <div id="tag_cloud">
+  Tag Cloud:
+   <% tag_cloud Post.tag_counts_on(:tags, :limit => 10, :order => "count desc"), %w[s m l] do |tag| %>
+    <%= link_to tag.name, tag_path(tag.name), class: "label label-orange font-12" %>
+   <% end %>
+  </div>
+  <div class="row gap-style">
     <%= render partial: 'posts/post', collection: @posts %>
-      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
   </div>
-  <div class="col-md-4">
-  </div>
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
-
-
-
-
-
