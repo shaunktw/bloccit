@@ -107,7 +107,7 @@ p.about{
     width: 100%;
 }
 .jumbotron .j-search{
-    margin-top: 100px;
+    margin-top: 10px;
     background: rgba(255,255,255,0.5);
     padding: 10px;
 }
@@ -118,10 +118,17 @@ p.about{
     z-index: 9999;
     top: 0px;
     height: 635px;
-    padding-top: 140px;
+    padding-top: 250px;
 }
 .j-select-input{
     width: 100px;
+}
+select#tag,
+#search-key,
+#search-submit{
+    font-size: 16px;
+    padding: 10px 5px;
+    height: auto;
 }
 #container {
     width: 100%;

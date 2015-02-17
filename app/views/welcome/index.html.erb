@@ -4,18 +4,18 @@
     <!-- <source src="/assets/test.ogg" type="video/ogg"> -->
   </video>
   <div class="row j-content">
-    <div class="col-lg-3 col-lg-offset-4">
-      <%= image_tag("logo.png", width: "300") %>
+    <div class="col-lg-1 col-lg-offset-2">
+      <%= image_tag("logo.png", width: "90") %>
     </div>
-    <div class="col-lg-4 j-search">
+    <div class="col-lg-6 j-search">
         <%= form_tag("/posts", method: "get") do %>
       <div class="input-group">
           <div class="input-group-btn j-select-input">
             <%= select_tag "tag", options_from_collection_for_select(Post.tag_counts_on(:tags, :limit => 10, :order => "count desc"), "name", "name"), class: "form-control" %>
           </div><!-- /btn-group -->
-          <input type="text" class="form-control" name="key">
+          <input type="text" class="form-control" name="key" id="search-key">
           <span class="input-group-btn">
-            <button class="btn btn-info" type="submit"><%= fa_icon "search" %> Search</button>
+            <button class="btn btn-info" type="submit" id="search-submit"><%= fa_icon "search" %> Search</button>
           </span>
       </div><!-- /input-group -->
         <% end %>
