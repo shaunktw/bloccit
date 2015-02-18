@@ -80,3 +80,8 @@ gem 'will_paginate-bootstrap'
 gem 'acts-as-taggable-on'
 
 gem 'omniauth-facebook'
+
+gem 'my_zipcode_gem'
+
+gem "mocha", group: :test
+gem 'protected_attributes'
