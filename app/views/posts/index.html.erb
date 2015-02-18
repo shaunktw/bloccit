@@ -4,9 +4,11 @@
       Trending
     </h3>
   </div>
-  <%= link_to topics_path(information: "Please select a topic"), class: 'btn btn-success' do %>
-    <span class="glyphicon glyphicon-plus"></span> New Post
-  <% end %>
+  <%-if user_signed_in?-%>
+    <%= link_to topics_path(information: "Please select a topic"), class: 'btn btn-success' do %>
+      <span class="glyphicon glyphicon-plus"></span> New Post
+    <% end %>
+  <%-end-%>
   <br>
   <p class="about"> Newest places this week </p>
   <div id="tag_cloud">
