@@ -82,4 +82,4 @@ gem 'acts-as-taggable-on'
 gem 'omniauth-facebook'
 
 gem 'geocoder'
-gem 'rails4-autocomplete''
+gem 'rails4-autocomplete'
