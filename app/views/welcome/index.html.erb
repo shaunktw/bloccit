@@ -11,9 +11,10 @@
         <%= form_tag("/posts", method: "get") do %>
       <div class="input-group">
           <div class="input-group-btn j-select-input">
-            <%= select_tag "tag", options_from_collection_for_select(Post.tag_counts_on(:tags, :limit => 10, :order => "count desc"), "name", "name"), class: "form-control" %>
+            <%= select_tag "tag", options_for_select([["Location", "Location"]]), class: "form-control" %>
           </div><!-- /btn-group -->
-          <input type="text" class="form-control" name="key" id="search-key">
+          <%= autocomplete_field_tag "geolocation", "", autocomplete_location_path, class: 'form-control', placeholder: "City or Postal Code", id: "search-key"  %>
+          <!-- <input type="text" class="form-control" name="key" id="search-key"> -->
           <span class="input-group-btn">
             <button class="btn btn-info" type="submit" id="search-submit"><%= fa_icon "search" %> Search</button>
           </span>

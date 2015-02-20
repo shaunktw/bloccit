@@ -20,5 +20,7 @@
   <div class="row gap-style">
     <%= render partial: 'posts/post', collection: @posts %>
   </div>
-    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    <% if !@posts.class.eql?(Array) %>
+      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    <% end %>
 </div>
