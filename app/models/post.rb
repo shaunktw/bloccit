@@ -1,10 +1,18 @@
 class Post < ActiveRecord::Base
+  attr_accessor :geolocation
+
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  
   belongs_to :user
   belongs_to :topic
+  belongs_to :location
+
   after_create :create_vote
+  
+  before_save :update_location
+
   mount_uploader :image, ImageUploader
   acts_as_taggable
 
@@ -39,6 +47,16 @@ class Post < ActiveRecord::Base
 
   def create_vote
     user.votes.create(value: 1, post: self)
+  end
+
+  def update_location
+    loc = Geocoder.search(geolocation).first
+    if loc.blank?
+      errors.add(:location_id, "are not valid location")
+    else
+      place = Location.find_or_create_place(loc.data["place_id"], loc)
+      self.location_id = place.id
+    end
   end
 
 end

@@ -65,10 +65,21 @@ class Topics::PostsController < ApplicationController
     end
   end
 
+  def autocomplete_location
+    location = Geocoder.search(params["term"])
+    json = location.collect do |item| 
+     { "id" => item.postal_code.to_s, 
+       "label" => item.address, 
+       "value" => item.address  
+     }
+   end
+    render json: json
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :tag_list)
+    params.require(:post).permit(:title, :body, :image, :tag_list, :location_id, :geolocation)
   end
 
 end
