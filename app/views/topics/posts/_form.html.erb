@@ -33,7 +33,6 @@
     <%= f.label :location_id %>
     <% location = post.new_record? ? "" : post.location.address %>
     <%= autocomplete_field_tag "post[geolocation]", location, autocomplete_location_path, class: 'form-control', placeholder: "Enter post location"  %>
-    <%#= f.text_field :location_id, class: 'form-control', placeholder: "Enter post location" %>
   <% end %>
   </div>
 

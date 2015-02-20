@@ -10,8 +10,6 @@ class Post < ActiveRecord::Base
   belongs_to :location
 
   after_create :create_vote
-  
-  before_save :update_location
 
   mount_uploader :image, ImageUploader
   acts_as_taggable
@@ -19,6 +17,8 @@ class Post < ActiveRecord::Base
   default_scope { order('created_at DESC') }
   scope :visible_to, ->(user) {user ? all : joins(:topic).where('topics.public' => true)}
 
+  validate :update_location
+  
   validates :title, length: {minimum: 5}, presence: true
   validates :body, length: {minimum: 20}, presence: true
   validates :topic , presence: true
@@ -52,7 +52,7 @@ class Post < ActiveRecord::Base
   def update_location
     loc = Geocoder.search(geolocation).first
     if loc.blank?
-      errors.add(:location_id, "are not valid location")
+      errors.add(:location_id, "are not valid")
     else
       place = Location.find_or_create_place(loc.data["place_id"], loc)
       self.location_id = place.id

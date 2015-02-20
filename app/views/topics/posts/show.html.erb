@@ -37,7 +37,7 @@
     </div>
     <p><%= markdown @post.body %></p>
     <p> Tags: <%= raw @post.tag_list.map {|t| link_to t, tag_path(t), class: "label label-orange" }.join(' ') %> </p>
-    <p> Location: <%= @post.location.address %>
+    <p> Location: <%= @post.location.address rescue ""%>
     <hr/>
     <p><%= image_tag(@post.image_url) if @post.image? %></p>
     <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
