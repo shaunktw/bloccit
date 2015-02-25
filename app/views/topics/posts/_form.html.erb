@@ -31,7 +31,7 @@
   <div class="form-group">
   <%= form_group_tag(post.errors[:location_id]) do %>
     <%= f.label :location_id %>
-    <% location = post.new_record? ? "" : (post.location.to_i.eql?(0)? ? "" : (post.location.address rescue "")) %>
+    <% location = post.new_record? ? "" : (post.location_id.to_i.eql?(0) ? "" : (post.location.address rescue "")) %>
     <%= autocomplete_field_tag "post[geolocation]", location, autocomplete_location_path, class: 'form-control', placeholder: "Enter post location"  %>
   <% end %>
   </div>
