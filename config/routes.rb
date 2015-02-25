@@ -16,10 +16,10 @@ Bloccit::Application.routes.draw do
       end
     end
 
-
+  get 'autocomplete_location' => 'topics/posts#autocomplete_location'
   get 'about' => 'welcome#about'
   get 'index' => 'welcome#index'
   get 'privacypolicy' => 'welcome#privacypolicy'
-  root to: 'posts#index'
+  root to: 'welcome#index'
   
 end

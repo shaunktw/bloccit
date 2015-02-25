@@ -1,35 +1,57 @@
-<br/>
-  <div class="jumbotron">
-    <h1>Sentro</h1>
-    <p>the center of everything new in Singapore</p>
-    <p>
-        <%= link_to "Sign In", new_user_session_path, class: 'btn btn-orange' %> or 
-        <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: 'btn btn-orange' %>
-        Not a user? <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-orange' %> today!
-    </p>
+<div class="jumbotron">
+  <video width="100%" autoplay loop muted>
+    <source src="/assets/video/test.mp4" type="video/mp4">
+    <!-- <source src="/assets/test.ogg" type="video/ogg"> -->
+  </video>
+  <div class="row j-content">
+    <div class="col-md-1 col-md-offset-2">
+      <%= image_tag("logo.png", width: "75") %>
+    </div>
+    <div class="col-md-6 j-search">
+        <%= form_tag("/posts", method: "get") do %>
+      <div class="input-group">
+          <div class="input-group-btn j-select-input">
+            <%= select_tag "tag", options_for_select([["Location", "Location"]]), class: "form-control" %>
+          </div><!-- /btn-group -->
+          <%= autocomplete_field_tag "geolocation", "", autocomplete_location_path, class: 'form-control', placeholder: "City or Postal Code", id: "search-key"  %>
+          <!-- <input type="text" class="form-control" name="key" id="search-key"> -->
+          <span class="input-group-btn">
+            <button class="btn btn-info" type="submit" id="search-submit"><%= fa_icon "search" %> Search</button>
+          </span>
+      </div><!-- /input-group -->
+        <% end %>
+    </div>
   </div>
-<div class="color-content">
+</div>
+<br/>
+<div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <div class="showback">
-        <h2>Sharing Is Caring</h2>
-        <p>Sentro is for sharing new and interesting establishments. Learn about the new retail stores, restaurants, cafes, coffee joints or even laundromats in town!</p>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag("users.png", width: "50%") %>
+        <div class="caption">
+          <h3>Sharing Is Caring</h3>
+          <p>Sentro is for sharing new and interesting establishments. Learn about the new retail stores, restaurants, cafes, coffee joints or even laundromats in town!</p>
+        </div>
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="showback">
-        <h2>Eliminates Lag Time</h2>
-        <p>We encourage people to submit links, photos or videos of new establishments.</p>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag("media.png", width: "50%") %>
+        <div class="caption">
+          <h3>Eliminates Lag Time</h3>
+          <p>We encourage people to submit links, photos or videos of new establishments.</p>
+        </div>
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="showback">
-        <h2>Make Your Name Known</h2>
-        <p>Sentro curates submissions and are upvoted by the community. This is a great way to view trending establishments.</p>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag("community.png", width: "50%") %>
+        <div class="caption">
+          <h3>Make Your Name Known</h3>
+          <p>Sentro curates submissions and are upvoted by the community. This is a great way to view trending establishments.</p>
+        </div>
       </div>
     </div>
-
   </div>
 </div>

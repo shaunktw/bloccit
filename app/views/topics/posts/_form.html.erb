@@ -27,6 +27,15 @@
     <%= f.text_field :tag_list, class: 'form-control', placeholder: "Tags (seperated by commas)" %>
   <% end %>
   </div>
+
+  <div class="form-group">
+  <%= form_group_tag(post.errors[:location_id]) do %>
+    <%= f.label :location_id %>
+    <% location = post.new_record? ? "" : post.location.address %>
+    <%= autocomplete_field_tag "post[geolocation]", location, autocomplete_location_path, class: 'form-control', placeholder: "Enter post location"  %>
+  <% end %>
+  </div>
+
   <div class="form-group">
   <%= form_group_tag(post.errors[:image]) do %>
   <%= f.label :image %>
