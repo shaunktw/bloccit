@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922180858) do
+ActiveRecord::Schema.define(version: 20150220025607) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20140922180858) do
   add_index "favorites", ["post_id"], name: "index_favorites_on_post_id"
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
+  create_table "locations", force: true do |t|
+    t.text     "address"
+    t.string   "place_id"
+    t.string   "postal_code"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "body"
@@ -43,8 +52,10 @@ ActiveRecord::Schema.define(version: 20140922180858) do
     t.integer  "topic_id"
     t.string   "image"
     t.float    "rank"
+    t.integer  "location_id"
   end
 
+  add_index "posts", ["location_id"], name: "index_posts_on_location_id"
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
