@@ -40,3 +40,5 @@ module Bloccit
     end
   end
 end
+
+Geocoder.config[:timeout]= 30
