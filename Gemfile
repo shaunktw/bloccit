@@ -67,7 +67,7 @@ gem 'pundit'
 gem 'redcarpet'
 
 #CarrierWave and MiniMagick
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.9.0'
 gem 'mini_magick'
 
 # Amazon S3 for gem

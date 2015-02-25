@@ -25,5 +25,18 @@ module Bloccit
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    initializer 'setup_asset_pipeline', :group => :all  do |app|
+    app.config.assets.precompile.shift
+
+    config.assets.initialize_on_precompile = false
+    config.serve_static_assets = true
+    app.config.assets.precompile.push(Proc.new do |path|
+        File.extname(path).in? [
+          '.html', '.erb', '.haml',                 # Templates
+          '.png',  '.gif', '.jpg', '.jpeg',         # Images
+          '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
+        ]
+      end)
+    end
   end
 end
