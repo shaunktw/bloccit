@@ -2,32 +2,36 @@
 <html>
 <head>
   <title>Sentro</title>
-  <%= stylesheet_link_tag    "application", "style", "jquery.gritter", media: "all" %>
-  <%= javascript_include_tag "application", "jquery.gritter" %>
+  <%= stylesheet_link_tag    "application", "style", "jquery.gritter", "video-js.min", media: "all" %>
+  <%= javascript_include_tag "application", "jquery.gritter", "video" %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript">
+    videojs.options.flash.swf =  "/assets/video-js.swf";
+  </script>
   <%= csrf_meta_tags %>
 </head>
 <body>
     <%= render "navbar" %>
-    
     <%= yield %>
-    
     <script type="text/javascript">
         $(document).ready(function () {
-        var unique_id = $.gritter.add({
-            // (string | mandatory) the heading of the notification
-            title: '',
-            // (string | mandatory) the text inside the notification
-            text: '<%= flash[:notice] || flash[:error] || flash[:info] || flash[:warning] || flash[:alert] %>',
-            // (string | optional) the image to display on the left
-            image: '',
-            // (bool | optional) if you want it to fade out on its own or just sit there
-            sticky: true,
-            // (int | optional) the time you want it to be alive for before fading out
-            time: '',
-            // (string | optional) the class name you want to apply to that specific message
-            class_name: 'my-sticky-class'
-        });
+          if ("<%= flash[:notice] || flash[:error] || flash[:info] || flash[:warning] || flash[:alert] %>" != "") {
+
+            var unique_id = $.gritter.add({
+                // (string | mandatory) the heading of the notification
+                title: '',
+                // (string | mandatory) the text inside the notification
+                text: '<%= flash[:notice] || flash[:error] || flash[:info] || flash[:warning] || flash[:alert] %>',
+                // (string | optional) the image to display on the left
+                image: '',
+                // (bool | optional) if you want it to fade out on its own or just sit there
+                sticky: true,
+                // (int | optional) the time you want it to be alive for before fading out
+                time: '',
+                // (string | optional) the class name you want to apply to that specific message
+                class_name: 'my-sticky-class'
+            });
+          }
 
         return false;
         });

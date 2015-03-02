@@ -132,6 +132,15 @@ select#tag,
     width: 100%;
     height: 100%;
 }
+#example_video_1{
+    width: 100% !important;
+}
+.vjs-control-bar{
+    display: none !important;
+}
+.vjs-big-play-button{
+    z-index: 9999999 !important;
+}
 @media(max-width: 767px){
     .jumbotron .j-search{
         margin-top: 10px;
@@ -147,11 +156,17 @@ select#tag,
         font-size: 12px;
         padding: 5px 5px;
     }
+    #example_video_1{
+        height: 360px !important;
+    }
 }
 @media(max-width: 480px){
     .jumbotron .j-content{
         padding-top: 25px;
         text-align: center;
+    }
+    #example_video_1{
+        height: 160px !important;
     }
 }
 @media(min-width: 768px){
@@ -169,6 +184,9 @@ select#tag,
         font-size: 16px;
         padding: 10px 5px;
     }
+    #example_video_1{
+        height: 560px !important;
+    }
 }
 
 @media(min-width: 992px){
@@ -183,8 +201,14 @@ select#tag,
     select#tag,
     #search-key,
     #search-submit{
-        font-size: 16px;
-        padding: 10px 5px;
+        font-size: 16px !important;
+        padding: 15px 5px !important;
+    }
+    select#tag{
+        -webkit-appearance: none;
+    }
+    #example_video_1{
+        height: 640px !important;
     }
 }
 

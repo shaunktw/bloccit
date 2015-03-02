@@ -23,3 +23,11 @@ if (window.location.href.indexOf('#_=_') > 0) {
 window.location = window.location.href.replace(/#.*/, '');
 
 }
+
+$(document).ready(function(){
+	var myVideo = videojs("example_video_1");
+	if ($(window).width() <= 1030)  {
+		myVideo.controls("true");
+	};
+	myVideo.muted("true");
+});
