@@ -25,9 +25,12 @@ window.location = window.location.href.replace(/#.*/, '');
 }
 
 $(document).ready(function(){
-	var myVideo = videojs("example_video_1");
-	if ($(window).width() <= 1030)  {
-		myVideo.controls("true");
-	};
-	myVideo.muted("true");
+	// var myVideo = videojs("example_video_1");
+	// // if ($(window).width() <= 1030)  {
+	// 	myVideo.controls("true");
+	// // };
+	// myVideo.muted("true");
+	// setTimeout(function(){
+	// 	$('.vjs-big-play-button').click();
+	// }, 3000);
 });

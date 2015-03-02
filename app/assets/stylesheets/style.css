@@ -202,10 +202,11 @@ select#tag,
     #search-key,
     #search-submit{
         font-size: 16px !important;
-        padding: 15px 5px !important;
+        padding: 10px 5px !important;
     }
     select#tag{
         -webkit-appearance: none;
+        padding: 9px 5px !important;
     }
     #example_video_1{
         height: 640px !important;
